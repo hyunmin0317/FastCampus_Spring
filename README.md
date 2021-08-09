@@ -5,7 +5,7 @@
 
 ### [Part 1. 자바프로그래밍](https://github.com/hyunmin0317/FastCampus_Spring/tree/main/Part1)
 
-### Part 2. 객체지향 프로그래밍
+### [Part 2. 객체지향 프로그래밍](https://github.com/hyunmin0317/FastCampus_Spring/tree/main/Part2)
 
 ### Part 3. 스프링입문
 
