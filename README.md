@@ -7,7 +7,7 @@
 
 ### [Part 2. 객체지향 프로그래밍](https://github.com/hyunmin0317/FastCampus_Spring/tree/main/Part2)
 
-### [Part 3. 스프링입문]()
+### [Part 3. 스프링입문](https://github.com/hyunmin0317/FastCampus_Spring/tree/main/Part3)
 
 ### Part 4. 안정적인 서비스를 위한 스프링DATA와 Security
 
