@@ -1,4 +1,4 @@
-## Part 1. 자바프로그래밍
+## [Part 1. 자바프로그래밍](https://gitlab.com/easyspubjava/javacoursework/-/tree/master/)
 
 1. [자바 기초](https://gitlab.com/easyspubjava/javacoursework/-/tree/master/Chapter1)
 2. [객체 지향 입문](https://gitlab.com/easyspubjava/javacoursework/-/tree/master/Chapter2)
