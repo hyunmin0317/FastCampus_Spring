@@ -4,14 +4,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PostRequestDto {
 
+    // 스네이크 케이스
     private String account;
     private String email;
     private String address;
     private String password;
 
+    // 카멜 케이스 사용법
     @JsonProperty("phone_number")
-    private String phoneNumber;
+    private String phoneNumber;     // phone_number
 
+    // 스네이크 케이스도 카멜 케이스도 아닌 경우
     @JsonProperty("OTP")
     private String OTP;
 
@@ -75,4 +78,3 @@ public class PostRequestDto {
                 '}';
     }
 }
-
