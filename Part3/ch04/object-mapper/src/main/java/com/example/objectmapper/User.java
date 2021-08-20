@@ -5,11 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class User {
     private String name;
     private int age;
-
     @JsonProperty("phone_number")
     private String phoneNumber;
 
-    public User(){
+    public User() {
         this.name = null;
         this.age = 0;
         this.phoneNumber = null;
