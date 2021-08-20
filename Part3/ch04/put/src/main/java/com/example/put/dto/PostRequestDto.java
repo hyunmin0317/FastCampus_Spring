@@ -1,13 +1,14 @@
-package com.example.put;
+package com.example.put.dto;
 
-import com.example.put.dto.CarDto;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 import java.util.List;
 
+// 카멜 케이스를 스네이크 케이스로 변경
 @JsonNaming(value = PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class PostRequestDto {
+
     private String name;
     private int age;
     private List<CarDto> carList;
