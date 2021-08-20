@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 @JsonNaming(value = PropertyNamingStrategy.SnakeCaseStrategy.class)
+// 특정한 값 제외 (null)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class User {
     private String name;
