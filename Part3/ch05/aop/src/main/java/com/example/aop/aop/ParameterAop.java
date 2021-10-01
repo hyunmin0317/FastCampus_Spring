@@ -12,9 +12,7 @@ import java.lang.reflect.Method;
 public class ParameterAop {
 
     @Pointcut("execution(* com.example.aop.controller..*.*(..))")
-    private void cut(){
-
-    }
+    private void cut(){}
 
     @Before("cut()")
     public void before(JoinPoint joinPoint) {
