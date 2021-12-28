@@ -10,8 +10,7 @@ abstract public class MemoryDbRepositoryAbstract<T extends MemoryDbEntity> imple
 
     @Override
     public Optional<T> findById(int index) {
-        db.stream().filter(it -> it.getIndex() == index).findFirst();
-        return Optional.empty();
+        return db.stream().filter(it -> it.getIndex() == index).findFirst();
     }
 
     @Override
