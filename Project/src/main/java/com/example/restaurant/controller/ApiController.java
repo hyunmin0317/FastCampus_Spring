@@ -22,7 +22,7 @@ public class ApiController {
     }
 
     @PostMapping("")
-    public WishListDto add(@RequestParam WishListDto wishListDto) {
+    public WishListDto add(@RequestBody WishListDto wishListDto) {
         log.info("{}", wishListDto);
         return wishListService.add(wishListDto);
     }
