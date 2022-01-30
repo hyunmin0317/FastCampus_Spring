@@ -1,4 +1,4 @@
-package com.example.practice.dto;
+package com.example.practice.get.dto;
 
 public class UserRequest {
 
