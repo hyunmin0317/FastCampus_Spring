@@ -1,4 +1,4 @@
-package com.example.practice.get.dto;
+package com.example.practice.delete.get.dto;
 
 public class UserRequest {
 

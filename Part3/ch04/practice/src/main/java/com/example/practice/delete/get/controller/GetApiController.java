@@ -1,6 +1,6 @@
-package com.example.practice.get.controller;
+package com.example.practice.delete.get.controller;
 
-import com.example.practice.get.dto.UserRequest;
+import com.example.practice.delete.get.dto.UserRequest;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
