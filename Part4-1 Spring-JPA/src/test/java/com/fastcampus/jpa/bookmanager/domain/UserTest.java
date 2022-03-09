@@ -7,7 +7,7 @@ class UserTest {
     @Test
     void test() {
         User user = new User();
-        User user1 = new User("hyunmin", "choihm9903@naver.com", LocalDateTime.now(), LocalDateTime.now());
+        User user1 = new User(null, "hyunmin", "choihm9903@naver.com", LocalDateTime.now(), LocalDateTime.now());
         User user2 = new User("hyunmin", "choihm9903@hanmail.net");
         User user3 = User.builder().name("hyunmin").email("choihm9903@gmail.com").build();
 
