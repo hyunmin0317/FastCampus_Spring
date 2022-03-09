@@ -3,24 +3,16 @@
 
 ---
 
-### [Part 1. 자바프로그래밍](https://github.com/hyunmin0317/FastCampus_Spring/tree/main/Part1)
+### [Part 1. 자바프로그래밍](https://github.com/hyunmin0317/FastCampus_Spring/tree/main/Part1%20Java)
 
-### [Part 2. 객체지향 프로그래밍](https://github.com/hyunmin0317/FastCampus_Spring/tree/main/Part2)
+### [Part 2. 객체지향 프로그래밍](https://github.com/hyunmin0317/FastCampus_Spring/tree/main/Part2%20OOP)
 
-### [Part 3. 스프링입문](https://github.com/hyunmin0317/FastCampus_Spring/tree/main/Part3)
+### [Part 3. 스프링입문](https://github.com/hyunmin0317/FastCampus_Spring/tree/main/Part3%20Spring)
 
-### Part 4. 안정적인 서비스를 위한 스프링DATA와 Security
+### [Part 4-1. 안정적인 서비스를 위한 스프링DATA와 Security - JPA 프로그래밍](https://github.com/hyunmin0317/FastCampus_Spring/tree/main/Part4-1%20Spring-JPA)
 
-* #### JPA 프로그래밍
+### [Part 4-2. 안정적인 서비스를 위한 스프링DATA와 Security - 스프링 시큐리티](https://github.com/hyunmin0317/FastCampus_Spring/tree/main/Part4-2%20Spring-Security)
 
-- #### 스프링 시큐리티
+### [Part 5-1. 대규모 서비스를 위한 스프링 Cloud와 Batch - 스프링 클라우드](https://github.com/hyunmin0317/FastCampus_Spring/tree/main/Part5-1%20Spring-Cloud)
 
-### Part 5. 대규모 서비스를 위한 스프링 Cloud와 Batch
-
-* #### 스프링 클라우드
-
-* #### 스프링 배치
-
-### Part 6. IntelliJ 가이드
-
-
+### [Part 5-2. 대규모 서비스를 위한 스프링 Cloud와 Batch - 스프링 배치](https://github.com/hyunmin0317/FastCampus_Spring/tree/main/Part5-2%20Spring-Batch)
