@@ -7,7 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.*;
 import org.springframework.transaction.annotation.Transactional;
-
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Order;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -153,11 +154,38 @@ class UserRepositoryTest {
         System.out.println("findByEmailOrName : " + userRepository.findByEmailOrName("martin@fastcampus.com", "dennis"));
         System.out.println("findByCreatedAtAfter : " + userRepository.findByCreatedAtAfter(LocalDateTime.now().minusDays(1L)));
         System.out.println("findByIdAfter : " + userRepository.findByIdAfter(4L));
+
         System.out.println("findByCreatedAtGreaterThan : " + userRepository.findByCreatedAtGreaterThan(LocalDateTime.now().minusDays(1L)));
         System.out.println("findByCreatedAtGreaterThanEqual : " + userRepository.findByCreatedAtGreaterThanEqual(LocalDateTime.now().minusDays(1L)));
         System.out.println("findByCreatedAtBetween : " + userRepository.findByCreatedAtBetween(LocalDateTime.now().minusDays(1L), LocalDateTime.now().plusDays(1L)));
         System.out.println("findByIdBetween : " + userRepository.findByIdBetween(1L, 3L));
         System.out.println("findByIdGreaterThanEqualAndIdLessThanEqual : " + userRepository.findByIdGreaterThanEqualAndIdLessThanEqual(1L, 3L));
         System.out.println("findByIdIsNotNull : " + userRepository.findByIdIsNotNull());
+//        System.out.println("findByAddressIsNotEmpty : " + userRepository.findByAddressIsNotEmpty());
+
+        System.out.println("findByNameIn : " + userRepository.findByNameIn(Lists.newArrayList("martin", "dennis")));
+        System.out.println("findByNameStartingWith : " + userRepository.findByNameStartingWith("mar"));
+        System.out.println("findByNameEndingWith : " + userRepository.findByNameEndingWith("tin"));
+        System.out.println("findByNameContains : " + userRepository.findByNameContains("art"));
+        System.out.println("findByNameLike : " + userRepository.findByNameLike("%" + "art" + "%"));
+    }
+
+    @Test
+    void pagingAndSortingTest() {
+        System.out.println("findTop1ByName : " + userRepository.findTop1ByName("martin"));
+        System.out.println("findTopByNameOrderByIdDesc : " + userRepository.findTopByNameOrderByIdDesc("martin"));
+        System.out.println("findFirstByNameOrderByIdDescEmailAsc : " + userRepository.findFirstByNameOrderByIdDescEmailAsc("martin"));
+        System.out.println("findFirstByNameWithSortParams : " + userRepository.findFirstByName("martin", Sort.by(Order.desc("id"), Order.asc("email"))));
+        System.out.println("findFirstSort : " + userRepository.findFirstByName("martin", getSort()));
+        System.out.println("findByNameWithPaging : " + userRepository.findByName("martin", PageRequest.of(1, 1, Sort.by(Order.desc("id")))).getTotalElements());
+    }
+
+    private Sort getSort() {
+        return Sort.by(
+                Order.desc("id"),
+                Order.desc("email"),
+                Order.desc("createdAt"),
+                Order.desc("updatedAt")
+        );
     }
 }
