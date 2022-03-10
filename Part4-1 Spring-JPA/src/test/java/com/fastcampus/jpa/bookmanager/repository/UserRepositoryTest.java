@@ -19,7 +19,7 @@ class UserRepositoryTest {
 
     // create, read, update, delete
     @Test
-    void crud() {
+    void crud() {   // create
         userRepository.save(new User());
 
         userRepository.findAll().forEach(System.out::println);
@@ -28,7 +28,7 @@ class UserRepositoryTest {
     }
 
     @Test
-    void crud2() {
+    void crud2() {  // create
         List<User> users = userRepository.findAll(Sort.by(Sort.Direction.DESC, "name"));
         List<User> users2 = userRepository.findAllById(Lists.newArrayList(1L, 2L, 5L));
         users.forEach(System.out::println);
@@ -45,7 +45,7 @@ class UserRepositoryTest {
 
     @Test
     @Transactional
-    void crud3() {
+    void crud3() {  // read
         User user = userRepository.getOne(1L);
         User user2 = userRepository.findById(1L).orElse(null);
         System.out.println(user);
@@ -53,7 +53,7 @@ class UserRepositoryTest {
     }
 
     @Test
-    void crud4() {
+    void crud4() {  // create
         userRepository.saveAndFlush(new User("new martin", "newmartin@fastcampus.com"));
 //        userRepository.save(new User("new martin", "newmartin@fastcampus.com"));
 //        userRepository.flush();
@@ -61,7 +61,7 @@ class UserRepositoryTest {
     }
 
     @Test
-    void crud5() {
+    void crud5() {  // read
         long count = userRepository.count();
         boolean exists = userRepository.existsById(1L);
         System.out.println(count);
@@ -69,7 +69,7 @@ class UserRepositoryTest {
     }
 
     @Test
-    void crud6() {
+    void crud6() {  // delete
         userRepository.delete(userRepository.findById(1L).orElseThrow(RuntimeException::new));
         userRepository.deleteById(2L);
         userRepository.deleteAll(userRepository.findAllById(Lists.newArrayList(3L, 4L)));
@@ -79,7 +79,7 @@ class UserRepositoryTest {
     }
 
     @Test
-    void crud7() {
+    void crud7() {  // read
         Page<User> users = userRepository.findAll(PageRequest.of(1, 3));
 
         System.out.println("page : " + users);
@@ -93,7 +93,7 @@ class UserRepositoryTest {
     }
 
     @Test
-    void crud8() {
+    void crud8() {  // read
         ExampleMatcher matcher = ExampleMatcher.matching()
                 .withIgnorePaths("name")    // name 제외
                 .withMatcher("email", endsWith());
@@ -105,5 +105,30 @@ class UserRepositoryTest {
         matcher = ExampleMatcher.matching().withMatcher("email", contains());
         example = Example.of(user, matcher);
         userRepository.findAll(example).forEach(System.out::println);
+    }
+
+    @Test
+    void crud9() {  // read
+        ExampleMatcher matcher = ExampleMatcher.matching()
+                .withIgnorePaths("name")    // name 제외
+                .withMatcher("email", endsWith());
+        Example<User> example = Example.of(new User("ma", "fastcampus.com"), matcher);
+        userRepository.findAll(example).forEach(System.out::println);
+
+        User user = new User();
+        user.setEmail("slow");
+        matcher = ExampleMatcher.matching().withMatcher("email", contains());
+        example = Example.of(user, matcher);
+        userRepository.findAll(example).forEach(System.out::println);
+    }
+
+    @Test
+    void crud10() {  // update
+        userRepository.save(new User("david", "david@fastcampus.com"));
+
+        User user = userRepository.findById(1L).orElseThrow(RuntimeException::new);
+        user.setEmail("matin-update@fastcampus.com");
+
+        userRepository.save(user);
     }
 }
