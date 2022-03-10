@@ -15,7 +15,7 @@ class UserTest {
         user.setName("hyunmin");
 
         System.out.println(">>> "+user);
-//        System.out.println(">>> "+user1);
+        System.out.println(">>> "+user1);
         System.out.println(">>> "+user2);
         System.out.println(">>> "+user3);
     }
