@@ -1,6 +1,7 @@
 package com.fastcampus.jpa.bookmanager.domain;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,24 +14,27 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-
 @Entity
 @NoArgsConstructor
 @Data
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class Publisher extends BaseEntity {
+public class Author extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
 
-    @OneToMany(orphanRemoval = true)
-    @JoinColumn(name = "publisher_id")
-    @ToString.Exclude
-    private List<Book> books = new ArrayList<>();
+    private String country;
 
-    public void addBook(Book book) {
-        this.books.add(book);
+    //    @ManyToMany
+    @OneToMany
+    @JoinColumn(name = "author_id")
+    @ToString.Exclude
+    private List<BookAndAuthor> bookAndAuthors = new ArrayList();
+
+    public void addBookAndAuthors(BookAndAuthor... bookAndAuthors) {
+        Collections.addAll(this.bookAndAuthors, bookAndAuthors);
     }
 }
