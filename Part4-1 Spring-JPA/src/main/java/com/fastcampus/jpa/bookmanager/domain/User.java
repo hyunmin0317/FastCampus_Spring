@@ -1,6 +1,10 @@
 package com.fastcampus.jpa.bookmanager.domain;
 
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -12,7 +16,7 @@ import java.util.List;
 @Data   // Getter, Setter, RequiredArgsConstructor, ToString, EqualsAndHashCode, Value
 @Builder
 @Entity
-@EntityListeners(value = MyEntityListener.class)
+@EntityListeners(value = { AuditingEntityListener.class, UserEntityListener.class })
 //@Table(name = "user", indexes = {@Index(columnList = "name")}, uniqueConstraints = {@UniqueConstraint(columnNames = {"email"})})
 public class User implements Auditable {
     @Id
@@ -30,9 +34,11 @@ public class User implements Auditable {
 
 //    @Column(name = "crtdat", nullable = false, unique = true)
     @Column(updatable = false)
+    @CreatedDate
     private LocalDateTime createdAt;
 
 //    @Column(insertable = false)
+    @LastModifiedDate
     private LocalDateTime updatedAt;
 
 //    @Transient      // DB에 반영 X
