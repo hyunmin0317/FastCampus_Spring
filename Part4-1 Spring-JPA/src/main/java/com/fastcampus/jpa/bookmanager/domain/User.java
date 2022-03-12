@@ -35,6 +35,12 @@ public class User extends BaseEntity {
     @JoinColumn(name = "user_id", insertable = false, updatable = false)
     private List<UserHistory> userHistories = new ArrayList();
 
+    @Builder.Default
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    @ToString.Exclude
+    private List<Review> reviews = new ArrayList();
+
 //    @Column(name = "crtdat", nullable = false, unique = true)
 //    @Column(updatable = false)
 //    @CreatedDate
