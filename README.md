@@ -1,5 +1,5 @@
 # FastCampus_Spring
-### 한번에 끝내는 Java/Spring 웹 개발 패키지 (2021년 2학기)
+### 한번에 끝내는 Java/Spring 웹 개발 패키지 (2021년 2학기 ~ 2022년 1학기)
 
 ---
 
