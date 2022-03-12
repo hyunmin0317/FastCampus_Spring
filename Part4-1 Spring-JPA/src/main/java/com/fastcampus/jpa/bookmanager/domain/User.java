@@ -12,8 +12,9 @@ import java.util.List;
 @Data   // Getter, Setter, RequiredArgsConstructor, ToString, EqualsAndHashCode, Value
 @Builder
 @Entity
+@EntityListeners(value = MyEntityListener.class)
 //@Table(name = "user", indexes = {@Index(columnList = "name")}, uniqueConstraints = {@UniqueConstraint(columnNames = {"email"})})
-public class User {
+public class User implements Auditable {
     @Id
     @GeneratedValue
     private Long id;
@@ -39,4 +40,29 @@ public class User {
 
 //    @OneToMany(fetch = FetchType.EAGER)
 //    private List<Address> address;
+
+//    listener
+
+//    insert
+//    @PrePersist
+//    public void prePersist() {
+//        this.createdAt = LocalDateTime.now();
+//        this.updatedAt = LocalDateTime.now();
+//    }
+//    @PostPersist
+
+//    select
+//    @PreUpdate
+//    public void preUpdate() {
+//        this.updatedAt = LocalDateTime.now();
+//    }
+//    @PostLoad
+
+//    update
+//    @PreUpdate
+//    @PostUpdate
+
+//    remove
+//    @PreRemove
+//    @PostRemove
 }
